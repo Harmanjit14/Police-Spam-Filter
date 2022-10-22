@@ -11,8 +11,9 @@ def voice(self):
     # Start our TwiML response
     resp = VoiceResponse()
 
-    resp.record(timeout=10,transcribe=True)
+    resp.record(max_length=30,play_beep=True)
     # Read a message aloud to the caller
-    resp.say("hello world!", voice='alice')
+    resp.say("Done Thank You!", voice='alice')
+    resp.hangup()
 
     return HttpResponse(str(resp))
