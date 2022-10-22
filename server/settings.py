@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
-    "graphene_django"
+    "graphene_django",
+    'db',
 ]
 
 GRAPHENE = {
