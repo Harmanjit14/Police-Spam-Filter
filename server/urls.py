@@ -29,5 +29,5 @@ urlpatterns += [
 ]
 
 urlpatterns+=[
-    path("/voice", voice)
+    path("voice", voice)
 ]
