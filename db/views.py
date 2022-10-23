@@ -23,7 +23,7 @@ def voice(request):
 @csrf_exempt
 def recording_complete(request):
     response = VoiceResponse()
-    print(request)
+    # print(request)
     # The recording url will return a wav file by default, or an mp3 if you add .mp3
     # recording_url = request.values['RecordingUrl'] + '.mp3'
 
@@ -31,6 +31,6 @@ def recording_complete(request):
 
     # with open('{}/{}'.format("static/recordings/", filename), 'wb') as f:
     #     f.write(requests.get(recording_url).content)
-    # response.hangup()
+    response.hangup()
 
     return HttpResponse("Not for consumer use")
