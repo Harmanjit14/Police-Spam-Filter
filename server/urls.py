@@ -17,7 +17,7 @@ from graphene_django.views import GraphQLView
 from django.contrib import admin
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
-from db.views import voice
+from db.views import voice, recording_complete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns += [
     path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
 ]
 
-urlpatterns+=[
-    path("voice", voice)
+urlpatterns += [
+    path("voice", voice),
+    path("recording-complete", recording_complete)
 ]
