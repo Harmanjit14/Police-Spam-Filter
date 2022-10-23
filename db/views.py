@@ -13,8 +13,8 @@ def voice(request):
     # Start our TwiML response
     resp = VoiceResponse()
 
-    resp.record(max_length=30, play_beep=True,recording_status_callback="recording-complete")
-    resp.hangup()
+    resp.record(max_length=30, play_beep=True,timeout=1,
+                recording_status_callback="/recording-complete")
 
     return HttpResponse("Not for consumer use")
 
