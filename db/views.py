@@ -8,7 +8,7 @@ import requests
 
 
 @csrf_exempt
-def voice():
+def voice(self):
     """Respond to incoming phone calls with a 'Hello world' message"""
     # Start our TwiML response
     resp = VoiceResponse()
@@ -21,7 +21,7 @@ def voice():
 
 
 @csrf_exempt
-def recording_complete(request):
+def recording_complete(self,request):
     response = VoiceResponse()
 
     # The recording url will return a wav file by default, or an mp3 if you add .mp3
