@@ -31,5 +31,6 @@ def recording_complete(request):
 
     with open('{}/{}'.format("static/recordings/", filename), 'wb') as f:
         f.write(requests.get(recording_url).content)
+    response.hangup()
 
     return HttpResponse("Not for consumer use")
